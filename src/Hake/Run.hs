@@ -40,10 +40,10 @@ mkTaskModule tasks = vcat $
   ] ++ map importTask tasks ++
   [ pretty "main"  <+> pretty "=" <+> pretty "hake" <+> pretty "tasks"
   , pretty "tasks" <+> pretty "::" <+> pretty "[Task]"
-  , pretty "tasks" <+> pretty "=" <+> hang 2 (list (map invokeTask tasks))
+  , pretty "tasks" <+> pretty "=" <+> pretty "concat" <+> hang 2 (list (map invokeTask tasks))
   ]
 
-invokeTask task = pretty (moduleName task) <> dot <> pretty "task"
+invokeTask task = pretty (moduleName task) <> dot <> pretty "tasks"
 importTask task = pretty "import" <+> pretty "qualified" <+> pretty (moduleName task)
 
 getTasksIn :: FilePath -> IO [Task]

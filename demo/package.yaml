@@ -1,6 +1,15 @@
 name: hake-test-suites
 version: '0.1.0.0'
 
+executables:
+  simple-task:
+    main: Main.hs
+    source-dirs: simple-task
+    ghc-options:
+    dependencies:
+    - base
+    - hake
+
 tests:
   empty:
     main: Main.hs
