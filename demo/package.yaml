@@ -1,0 +1,11 @@
+name: hake-test-suites
+version: '0.1.0.0'
+
+tests:
+  empty:
+    main: Main.hs
+    source-dirs: empty
+    ghc-options:
+    dependencies:
+    - base
+    - hake
